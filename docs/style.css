@@ -12,34 +12,36 @@ body {
     padding-top: 70px;
     position: relative;
   }
-  .top-corner-image {
-    position: absolute; /* Position the image absolutely within the body */
-    top: 90px; /* Distance from the top */
-    left: 120px; /* Distance from the right (for top-right corner) */
-    width: 145px; /* Set the width of the image */
-    height: auto; /* Maintain aspect ratio */
-    z-index: 10; /* Ensure the image stays on top of other elements */
+  .logo-container {
+    display: flex;
+    justify-content: space-between; /* Logos on left and right */
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    top: 70px; /* Adjust this based on navbar height */
+    left: 0;
+    padding: 0 20px; /* Adds spacing on both sides */
+    box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .logo-container {
+      flex-direction: column; /* Stack images on smaller screens */
+      align-items: center;
+      gap: 10px;
+      top: 10px; /* Reduce top spacing for small screens */
   }
+  
+  .top-corner-image,
   .right-corner-image {
-    position: absolute; /* Position the image absolutely within the body */
-    top: 90px; /* Distance from the top */
-    right: 120px; /* Distance from the right (for top-right corner) */
-    width: 130px; /* Set the width of the image */
-    height: auto; /* Maintain aspect ratio */
-    z-index: 10; /* Ensure the image stays on top of other elements */
+      width: 100px; /* Smaller size on mobile */
   }
-  @media (max-width: 767px) {
-    .top-corner-image {
-      top: 10px; /* Reduce top spacing for smaller screens */
-      left: 10px; /* Reduce left spacing for smaller screens */
-      width: 100px; /* Optionally reduce logo size on mobile */
-    }
+}
 
-    .right-corner-image {
-      top: 10px; /* Reduce top spacing for smaller screens */
-      right: 10px; /* Reduce right spacing for smaller screens */
-      width: 90px; /* Optionally reduce logo size on mobile */
-    }
+/* Logo images */
+  .top-corner-image,
+  .right-corner-image {
+      width: 130px; /* Adjust size as needed */
+      height: auto; /* Maintain aspect ratio */
   }
   
   p {
