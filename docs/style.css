@@ -25,10 +25,11 @@ body {
 }
 @media (max-width: 768px) {
   .logo-container {
-      flex-direction: column; /* Stack images on smaller screens */
-      align-items: center;
-      gap: 10px;
-      top: 10px; /* Reduce top spacing for small screens */
+    display: flex;
+    justify-content: space-between; /* Keeps logos at left and right */
+    width: 100%;
+    padding: 0 10px; /* Reduce padding */
+    position: relative; 
   }
   
   .top-corner-image,
