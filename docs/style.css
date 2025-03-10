@@ -28,6 +28,19 @@ body {
     height: auto; /* Maintain aspect ratio */
     z-index: 10; /* Ensure the image stays on top of other elements */
   }
+  @media (max-width: 767px) {
+    .top-corner-image {
+      top: 10px; /* Reduce top spacing for smaller screens */
+      left: 10px; /* Reduce left spacing for smaller screens */
+      width: 100px; /* Optionally reduce logo size on mobile */
+    }
+
+    .right-corner-image {
+      top: 10px; /* Reduce top spacing for smaller screens */
+      right: 10px; /* Reduce right spacing for smaller screens */
+      width: 90px; /* Optionally reduce logo size on mobile */
+    }
+  }
   
   p {
     text-align: justify;
