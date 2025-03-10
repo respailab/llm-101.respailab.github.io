@@ -15,7 +15,7 @@ body {
   .top-corner-image {
     position: absolute; /* Position the image absolutely within the body */
     top: 90px; /* Distance from the top */
-    right: 1160px; /* Distance from the right (for top-right corner) */
+    left: 120px; /* Distance from the right (for top-right corner) */
     width: 145px; /* Set the width of the image */
     height: auto; /* Maintain aspect ratio */
     z-index: 10; /* Ensure the image stays on top of other elements */
