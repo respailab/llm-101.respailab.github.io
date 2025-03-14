@@ -22,7 +22,7 @@ body {
   align-items: center;
   position: absolute;
   width: 100%;
-  top: 60px;
+  top: 90px;
   /* Adjust this based on navbar height */
   left: 0;
   padding: 0 20px;
@@ -35,7 +35,7 @@ body {
     display: flex;
     justify-content: space-between;
     /* Keeps logos at left and right */
-    top: 40px;
+    top: 25px;
     width: 100%;
     padding: 0 10px;
     /* Reduce padding */
