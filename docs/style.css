@@ -35,7 +35,7 @@ body {
     display: flex;
     justify-content: space-between;
     /* Keeps logos at left and right */
-    top: 25px;
+    top: 15px;
     width: 100%;
     padding: 0 10px;
     /* Reduce padding */
