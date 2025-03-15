@@ -18,44 +18,56 @@ body {
 .logo-container {
   display: flex;
   justify-content: space-between;
-  /* Logos on left and right */
-  align-items: center;
-  position: absolute;
+  align-items: flex-start; /* Align at the top */
   width: 100%;
-  top: 70px;
-  /* Adjust this based on navbar height */
-  left: 0;
-  padding: 0 20px;
-  /* Adds spacing on both sides */
   box-sizing: border-box;
+  padding: 10px 20px; 
+  margin: 0 0 50px 0; /* Add substantial margin below */
+  position: static; /* Use normal document flow */
 }
 
-@media (max-width: 768px) {
-  .logo-container {
-    display: flex;
-    justify-content: space-between;
-    /* Keeps logos at left and right */
-    top: 55px;
-    width: 100%;
-    padding: 0 10px;
-    /* Reduce padding */
-    position: relative;
-  }
+/* Reset the logo styles */
+.top-corner-image,
+.right-corner-image {
+  width: 150px; /* Slightly larger */
+  height: auto;
+  max-width: none; /* Remove constraint */
+}
 
+/* Adjust for mobile */
+@media (max-width: 768px) {
+  body {
+    padding-top: 60px; /* Adjust body padding */
+  }
+  
+  .logo-container {
+    padding: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Allow wrapping if needed */
+  }
+  
+  .top-corner-image,
+  .right-corner-image {
+    width: 120px; /* Still reasonably sized */
+  }
+  
+  /* Add clear spacing below */
+  h1, #header {
+    clear: both;
+    margin-top: 20px;
+  }
+}
+
+/* Fix for very small screens */
+@media (max-width: 480px) {
+  .logo-container {
+    margin-bottom: 20px;
+  }
+  
   .top-corner-image,
   .right-corner-image {
     width: 100px;
-    /* Smaller size on mobile */
   }
-}
-
-/* Logo images */
-.top-corner-image,
-.right-corner-image {
-  width: 130px;
-  /* Adjust size as needed */
-  height: auto;
-  /* Maintain aspect ratio */
 }
 
 p {
