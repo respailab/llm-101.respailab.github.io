@@ -172,8 +172,8 @@ body {
   
   /* Navbar color / spacing */
   .navbar-default {
-    background-color: #1ba1e2;
-    border-color: #1ba1e2;
+    background-color: #325CB9;
+    border-color: #325CB9;
     text-align: center;
   }
   .navbar-default .navbar-brand {
@@ -204,20 +204,20 @@ body {
   .navbar-default .navbar-nav > .active > a:hover,
   .navbar-default .navbar-nav > .active > a:focus {
     color: #fbcbcc;
-    background-color: #1ba1e2;
+    background-color: #325CB9;
   }
   .navbar-default .navbar-nav > .open > a,
   .navbar-default .navbar-nav > .open > a:hover,
   .navbar-default .navbar-nav > .open > a:focus {
     color: #fbcbcc;
-    background-color: #1ba1e2;
+    background-color: #325CB9;
   }
   .navbar-default .navbar-toggle {
-    border-color: #1ba1e2;
+    border-color: #325CB9;
   }
   .navbar-default .navbar-toggle:hover,
   .navbar-default .navbar-toggle:focus {
-    background-color: #1ba1e2;
+    background-color: #325CB9;
   }
   .navbar-default .navbar-toggle .icon-bar {
     background-color: #ecf0f1;
@@ -330,7 +330,7 @@ body {
   }
   
   #unreleased-message {
-    background: #1ba1e2;
+    background: #325CB9;
     box-sizing: border-box;
     color: #fff;
     font-weight: bold;
