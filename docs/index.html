@@ -1,80 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
-    <title>LLM-101 | Language Modeling from Scratch</title>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+  <title>LLM-101 | Language Modeling from Scratch</title>
+  <style>
+    #shuffle-container {
+      visibility: hidden;
+    }
+  </style>
+  <noscript>
     <style>
-      #shuffle-container {
-        visibility: hidden;
-      }
-    </style>
-    <noscript><style>
       #shuffle-container {
         visibility: visible;
       }
-    </style></noscript>
-    <script>
-      // Shuffle CAs
-      document.addEventListener("DOMContentLoaded", function() {
-        const container = document.getElementById("shuffle-container");
-        const children = Array.from(container.children);
+    </style>
+  </noscript>
+  <script>
+    // Shuffle CAs
+    document.addEventListener("DOMContentLoaded", function () {
+      const container = document.getElementById("shuffle-container");
+      const children = Array.from(container.children);
 
-        // 50% chance to shuffle
-        if (Math.random() <= 0.5) {
-          container.insertBefore(children[4], children[3]);
-        }
+      // 50% chance to shuffle
+      if (Math.random() <= 0.5) {
+        container.insertBefore(children[4], children[3]);
+      }
 
-        // Now unhide them
-        container.style.visibility = "visible";
-      });
-    </script>
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <!-- Google fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  </head>
-  <body>
-    <!-- <div id="unreleased-message" style="text-align: center;">
+      // Now unhide them
+      container.style.visibility = "visible";
+    });
+  </script>
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <!-- Google fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <!-- <div id="unreleased-message" style="text-align: center;">
       This site is under active construction, and contents are subject to change.
     </div> -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand brand" href="index.html">LLM 101</a>
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="navbar-right">
-              <a href="index.html#coursework">Coursework</a>
-            </li>
-            <li class="navbar-right">
-              <a href="index.html#schedule">Schedule</a>
-            </li>
-          </ul>
-        </div>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand brand" href="index.html">LLM 101</a>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
       </div>
-    </nav>
-
-    <div id="header" class="container"">
-      <img src="images/logo_respai.png" alt="Image 1" style="height: 50px;">
-      <div style="display: inline-block; margin: 0 10px; text-align: center;">
-        <h1>LLM-101: Introduction to Large Language Models</h1>
-        <h3>RespAI Lab / Spring 2025</h3>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="navbar-right">
+            <a href="index.html#coursework">Coursework</a>
+          </li>
+          <li class="navbar-right">
+            <a href="index.html#schedule">Schedule</a>
+          </li>
+        </ul>
       </div>
-      <img src="images/kiit.png" alt="Image 2" style="height: 50px;">
     </div>
-    
-    <!-- Intro -->
-    <!-- <div class="container sec" id="intro">
+  </nav>
+
+  <div id="header" class="container"">
+      <img src=" images/logo_respai.png" alt="Image 1" style="height: 50px;">
+    <div style="display: inline-block; margin: 0 10px; text-align: center;">
+      <h1>LLM-101: Introduction to Large Language Models</h1>
+      <h3>RespAI Lab / Spring 2025</h3>
+    </div>
+    <img src="images/kiit.png" alt="Image 2" style="height: 50px;">
+  </div>
+
+  <!-- Intro -->
+  <!-- <div class="container sec" id="intro">
       <p style="text-align: center;">
       <div style="border: 2px solid #1ba1e2; background-color: #fff; padding: 10px; border-radius: 5px; text-align: center;">
         <font style="color: #1ba1e2; font-weight: bold; font-size: 1.5em"> 
@@ -85,60 +90,60 @@
       </div>
       </p>
     </div> -->
-    <!-- Staff Info -->
-    <div class="container sec" id="people">
-      <!-- <div class="row"> -->
-      <div class="col">
-        <h2>Course Staff</h2>
-        <div class="instructor">
-          <a href="https://murarimandal.github.io">
-            <div class="instructorphoto">
-              <img src="images/murari.jpg">
-            </div>
-            <div>Dr. Murari Mandal</div>
-          </a>
-          <div>Instructor</div>
-        </div>
-        <div class="instructor">
-          <a href="https://umakantamaharana.github.io">
-            <div class="instructorphoto">
-              <img src="images/umakanta.jpg">
-            </div>
-            <div>Umakanta Mahrana</div>
-          </a>
-          <div>Instructor</div>
-        </div>
-        <div class="instructor">
-          <a href="https://www.linkedin.com/in/debdeep-sanyal-18264a211/">
-            <div class="instructorphoto">
-              <img src="images/debdeep.jpg">
-            </div>
-            <div>Debdeep Sanyal</div>
-          </a>
-          <div>Instructor</div>
-        </div>
-        <div class="instructor">
-          <a href="https://aakash.is-a.dev">
-            <div class="instructorphoto">
-              <img src="images/aakash.jpg">
-            </div>
-            <div>Aakash Sen Sharma</div>
-          </a>
-          <div>Instructor</div>
-        </div>
-        <div class="instructor">
-          <a href="https://www.cybertechtok.com">
-            <div class="instructorphoto">
-              <img src="images/arka.png">
-            </div>
-            <div>Arka Mukherjee</div>
-          </a>
-          <div>Instructor</div>
-        </div>
+  <!-- Staff Info -->
+  <div class="container sec" id="people">
+    <!-- <div class="row"> -->
+    <div class="col">
+      <h2>Course Staff</h2>
+      <div class="instructor">
+        <a href="https://murarimandal.github.io">
+          <div class="instructorphoto">
+            <img src="images/murari.jpg">
+          </div>
+          <div>Dr. Murari Mandal</div>
+        </a>
+        <div>Instructor</div>
+      </div>
+      <div class="instructor">
+        <a href="https://umakantamaharana.github.io">
+          <div class="instructorphoto">
+            <img src="images/umakanta.jpg">
+          </div>
+          <div>Umakanta Mahrana</div>
+        </a>
+        <div>Instructor</div>
+      </div>
+      <div class="instructor">
+        <a href="https://www.linkedin.com/in/debdeep-sanyal-18264a211/">
+          <div class="instructorphoto">
+            <img src="images/debdeep.jpg">
+          </div>
+          <div>Debdeep Sanyal</div>
+        </a>
+        <div>Instructor</div>
+      </div>
+      <div class="instructor">
+        <a href="https://aakash.is-a.dev">
+          <div class="instructorphoto">
+            <img src="images/aakash.jpg">
+          </div>
+          <div>Aakash Sen Sharma</div>
+        </a>
+        <div>Instructor</div>
+      </div>
+      <div class="instructor">
+        <a href="https://www.cybertechtok.com">
+          <div class="instructorphoto">
+            <img src="images/arka.png">
+          </div>
+          <div>Arka Mukherjee</div>
+        </a>
+        <div>Instructor</div>
       </div>
     </div>
-    <!-- Logistics -->
-    <!-- <div class="sechighlight">
+  </div>
+  <!-- Logistics -->
+  <!-- <div class="sechighlight">
       <div class="container sec" id="logistics">
         <h2>Logistics</h2>
         <ul>
@@ -157,260 +162,261 @@
         </ul>
       </div>
     </div> -->
-  </body>
-  <!-- Content -->
-  <div class="container sec" id="content">
-    <h2>Content</h2>
-    <h3>What is this course about?</h3>
-    <p> Language models serve as the cornerstone of modern natural language processing (NLP) applications and open up a
-      new paradigm of having a single general purpose system address a range of downstream tasks. As the field of
-      artificial intelligence (AI), machine learning (ML), and NLP continues to grow, possessing a deep understanding of
-      language models and generative ai in general becomes essential for scientists and engineers alike. This course is
-      designed to provide students with a comprehensive understanding of language models by walking them through the
-      entire process of how a language model is developed and optimized. Unlike most of the courses, this course will
-      include a lot of coding the concepts along you learn along the way, which includes developing an entire language
-      model and from scratch and optimizing it in various aspects. </p>
-    <h3>Prerequisites</h3>
-    <ul>
-      <li>
-        <b>Proficiency in Python</b>
-        <p>The majority of class assignments will be in Python, hence it is suggested that the students attending are
-          comfortable with basic-intermediate Python codes.
-          The amount of code that you will be writing will be an order of magnitude higher than other classes, hence for
-          the ones
-          who have not started with Python, <b><a href="https://youtu.be/nLRL_NcnK-4?feature=shared">this</a></b> should
-          be enough to get started with.
-          You will be learning more along the way.</p>
-      </li>
-      <li>
-        <b>Experience with deep learning</b>
-        <p> A significant part of the course will involve making million-billion parameter scale neural networks and
-          learning how to run them quickly and efficiently on GPUs across multiple machines. We expect students to have
-          some understanding of basic neural networks.
-          You may refer to <b><a href="https://fleuret.org/public/lbdl.pdf">this resource.</a></b>
-      <li>
-        <b>College Calculus, Linear Algebra</b> (e.g. 12th Grade, MA11001 (1st Semester) or equivalent) <p>You should be
-          comfortable understanding matrix/vector notation and operations.</p>
-      </li>
-      <li>
-        <b>Basic Probability and Statistics</b> (e.g. 12th Grade, MA21001 (3rd semester) or equivalent) <p>You should know
-          the basics of probabilities, Gaussian distributions, mean, standard deviation, etc.</p>
-      </li>
-    </ul>
-    <p>
-      Note that this is not a graded class.
-      The purpose of this class is to introduce the mechanistics and system level optimizations of large generative models
-      to students which are not available as distinct courses on the internet.
-    </p>
+</body>
+<!-- Content -->
+<div class="container sec" id="content">
+  <h2>Content</h2>
+  <h3>What is this course about?</h3>
+  <p> Language models serve as the cornerstone of modern natural language processing (NLP) applications and open up a
+    new paradigm of having a single general purpose system address a range of downstream tasks. As the field of
+    artificial intelligence (AI), machine learning (ML), and NLP continues to grow, possessing a deep understanding of
+    language models and generative ai in general becomes essential for scientists and engineers alike. This course is
+    designed to provide students with a comprehensive understanding of language models by walking them through the
+    entire process of how a language model is developed and optimized. Unlike most of the courses, this course will
+    include a lot of coding the concepts along you learn along the way, which includes developing an entire language
+    model and from scratch and optimizing it in various aspects. </p>
+  <h3>Prerequisites</h3>
+  <ul>
+    <li>
+      <b>Proficiency in Python</b>
+      <p>The majority of class assignments will be in Python, hence it is suggested that the students attending are
+        comfortable with basic-intermediate Python codes.
+        The amount of code that you will be writing will be an order of magnitude higher than other classes, hence for
+        the ones
+        who have not started with Python, <b><a href="https://youtu.be/nLRL_NcnK-4?feature=shared">this</a></b> should
+        be enough to get started with.
+        You will be learning more along the way.</p>
+    </li>
+    <li>
+      <b>Experience with deep learning</b>
+      <p> A significant part of the course will involve making million-billion parameter scale neural networks and
+        learning how to run them quickly and efficiently on GPUs across multiple machines. We expect students to have
+        some understanding of basic neural networks.
+        You may refer to <b><a href="https://fleuret.org/public/lbdl.pdf">this resource.</a></b>
+    <li>
+      <b>College Calculus, Linear Algebra</b> (e.g. 12th Grade, MA11001 (1st Semester) or equivalent) <p>You should be
+        comfortable understanding matrix/vector notation and operations.</p>
+    </li>
+    <li>
+      <b>Basic Probability and Statistics</b> (e.g. 12th Grade, MA21001 (3rd semester) or equivalent) <p>You should know
+        the basics of probabilities, Gaussian distributions, mean, standard deviation, etc.</p>
+    </li>
+  </ul>
+  <p>
+    Note that this is not a graded class.
+    The purpose of this class is to introduce the mechanistics and system level optimizations of large generative models
+    to students which are not available as distinct courses on the internet.
+  </p>
+</div>
+<!-- Coursework -->
+<!-- Note the margin-top:-20px and the <br> serve to make the #coursework hyperlink display correctly (with the h2 header visible) -->
+<div class="sechighlight">
+  <div class="container sec" id="coursework" style="margin-top:-20px">
+    <br>
+    <h2>Coursework</h2>
+    <h3>Assignments</h3>
+    Coding assignments, related to each topic, will be provided when required and discussed in class. While ungraded,
+    these assignments are crucial for solidifying your understanding.
+    For any assistance, students are welcome to contact any instructor. All of the codes discussed in the classes will
+    be available on <a href="https://github.com/respailab">github</a>.
+    Here's a list of <a
+      href="https://docs.google.com/document/d/1N_5G2h-Qwwi9xgxJHin41EEbBQMp_9zf7nH2wJS4ep8/edit?usp=sharing">questions</a>
+    you can try out before joining the class.
+    Feel free to refer to ChatGPT or any AI to help solve and understand the questions.
+    <!-- <h3>Sponsor</h3> -->
+    <!-- <p>We would like to thank <a href="https://together.ai">Together AI</a> for sponsoring the compute for this class.</p> -->
   </div>
-  <!-- Coursework -->
-  <!-- Note the margin-top:-20px and the <br> serve to make the #coursework hyperlink display correctly (with the h2 header visible) -->
-  <div class="sechighlight">
-    <div class="container sec" id="coursework" style="margin-top:-20px">
-      <br>
-      <h2>Coursework</h2>
-      <h3>Assignments</h3>
-      Coding assignments, related to each topic, will be provided when required and discussed in class. While ungraded,
-      these assignments are crucial for solidifying your understanding.
-      For any assistance, students are welcome to contact any instructor. All of the codes discussed in the classes will
-      be available on <a href="https://github.com/respailab">github</a>.
-      Here's a list of <a
-        href="https://docs.google.com/document/d/1N_5G2h-Qwwi9xgxJHin41EEbBQMp_9zf7nH2wJS4ep8/edit?usp=sharing">questions</a>
-      you can try out before joining the class.
-      Feel free to refer to ChatGPT or any AI to help solve and understand the questions.
-      <!-- <h3>Sponsor</h3> -->
-      <!-- <p>We would like to thank <a href="https://together.ai">Together AI</a> for sponsoring the compute for this class.</p> -->
+</div>
+
+<div class="container sec" id="syllabus" style="margin-top:-20px">
+  <br>
+  <h2>Topics to be covered</h2>
+  <div class="dropdown">
+    <div class="dropdown-header">Module 1: Introduction and Foundations</div>
+    <div class="dropdown-content">
+      <ul>
+        <li><b>Course Introduction</b></li>
+        <li><b>A general history of the progression of LLMs</b></li>
+        <li><b>Natural Language Processing (NLP)</b>
+          <ul>
+            <li><b>Statistical Language Modeling</b></li>
+            <li><b>Advanced Smoothing and Evaluation Methods</b></li>
+            <li><b>Word Representation: Word2vec</b></li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </div>
 
-  <div class="container sec" id="syllabus" style="margin-top:-20px">
-    <br>
-    <h2>Topics to be covered</h2>
-    <div class="dropdown">
-      <div class="dropdown-header">Module 1: Introduction and Foundations</div>
-      <div class="dropdown-content">
-        <ul>
-          <li><b>Course Introduction</b></li>
-          <li><b>A general history of the progression of LLMs</b></li>
-          <li><b>Natural Language Processing (NLP)</b>
-            <ul>
-              <li><b>Statistical Language Modeling</b></li>
-              <li><b>Advanced Smoothing and Evaluation Methods</b></li>
-              <li><b>Word Representation: Word2vec</b></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  
-    <div class="dropdown">
-      <div class="dropdown-header">Module 2: Neural Language Modeling</div>
-      <div class="dropdown-content">
-        <ul>
-          <li><b>Neural Networks (NN)</b></li>
-          <li><b>Convolutional Neural Networks (CNN)</b></li>
-          <li><b>Recurrent Neural Networks (RNN)</b></li>
-          <li><b>Long Short-Term Memory Networks (LSTM)</b></li>
-          <li><b>Sequence-to-Sequence Models</b></li>
-          <li><b>Backpropagation</b></li>
-        </ul>
-      </div>
-    </div>
-  
-    <div class="dropdown">
-      <div class="dropdown-header">Module 3: Training Neural Network Models</div>
-      <div class="dropdown-content">
-        <ul>
-          <li><b>Attention Mechanisms</b></li>
-          <li><b>Optimizers</b></li>
-          <li><b>Residual Connections</b></li>
-          <li><b>Batch Normalization / Layer Normalization</b></li>
-        </ul>
-      </div>
-    </div>
-  
-    <div class="dropdown">
-      <div class="dropdown-header">Module 4: Transformers</div>
-      <div class="dropdown-content">
-        <ul>
-          <li><b>Introduction to Transformers</b></li>
-          <li><b>"Attention is All You Need" Paper</b></li>
-          <li><b>Tokenizers (from scratch and using HuggingFace libraries)</b></li>
-        </ul>
-      </div>
-    </div>
-  
-    <div class="dropdown">
-      <div class="dropdown-header">Module 5: LLM Training</div>
-      <div class="dropdown-content">
-        <ul>
-          <li><b>Pre Training</b>
-            <ul>
-              <li><b>Data Preparation</b></li>
-              <li><b>Scaling Laws</b></li>
-            </ul>
-          </li>
-          <li><b>Fine-tuning (TULU)</b></li>
-          <li><b>In-Context Learning</b></li>
-          <li><b>Preference Optimization</b>
-            <ul>
-              <li><b>RLHF (Reinforcement Learning from Human Feedback)</b></li>
-              <li><b>DPO (Direct Preference Optimization)</b></li>
-              <li><b>PPO (Proximal Policy Optimization)</b></li>
-              <li><b>GRPO (Group Relative Policy Optimization)</b></li>
-            </ul>
-          </li>
-          <li><b>Distributed Training</b>
-            <ul>
-              <li><b>Fully Sharded Data Parallel</b></li>
-              <li><b>DeepSpeed</b></li>
-              <li><b>Accelerate</b></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  
-    <div class="dropdown">
-      <div class="dropdown-header">Module 6: LLM Optimization</div>
-      <div class="dropdown-content">
-        <ul>
-          <li><b>Inference Optimization</b>
-            <ul>
-              <li><b>Batching</b></li>
-              <li><b>Quantization</b>
-                <ul>
-                  <li><b>FP32, FP16, int8, NF4</b></li>
-                  <li><b>GGUF</b></li>
-                  <li><b>llama.cpp</b></li>
-                </ul>
-              </li>
-              <li><b>KV Caching</b></li>
-              <li><b>torch.compile()</b></li>
-              <li><b>FlashAttention</b></li>
-            </ul>
-          </li>
-          <li><b>Attention Optimization (L Serve, Top-k, Top-Theta)</b></li>
-          <li><b>Parameter-Efficient Fine-Tuning (LoRA, QLoRA, etc.)</b></li>
-          <li><b>Distillation</b></li>
-        </ul>
-      </div>
-    </div>
-  
-    <div class="dropdown">
-      <div class="dropdown-header">Module 7: Reasoning with LLMs</div>
-      <div class="dropdown-content">
-        <ul>
-          <li><b>Search Techniques</b></li>
-          <li><b>Test-Time Scaling</b></li>
-          <li><b>Reinforcement Learning (RL) Overview</b></li>
-          <li><b>Chain-of-Thought (CoT) Reasoning</b></li>
-          <li><b>Related Research Papers</b></li>
-        </ul>
-      </div>
-    </div>
-  
-    <div class="dropdown">
-      <div class="dropdown-header">Module 8: Advanced LLM Architectures</div>
-      <div class="dropdown-content">
-        <ul>
-          <li><b>Multimodal LLMs</b></li>
-          <li><b>Mixture of Experts (MoE)</b></li>
-          <li><b>Mamba</b></li>
-          <li><b>Diffusion LLMs</b></li>
-          <li><b>Large Concept Models (LCM)</b></li>
-        </ul>
-      </div>
-    </div>
-  
-    <div class="dropdown">
-      <div class="dropdown-header">Module 9: Retrieval-Augmented Generation (RAG)</div>
-      <div class="dropdown-content">
-        <ul>
-          <li><b>Indexing</b></li>
-          <li><b>Retrieval</b></li>
-          <li><b>Generation</b></li>
-          <li><b>Query Translation</b>
-            <ul>
-              <li><b>Multi Query</b></li>
-              <li><b>RAG Fusion</b></li>
-              <li><b>Decomposition</b></li>
-              <li><b>HyDE</b></li>
-            </ul>
-          </li>
-          <li><b>Routing</b></li>
-          <li><b>Query Construction</b></li>
-          <li><b>Indexing</b></li>
-          <li><b>Building a RAG application</b></li>
-        </ul>
-      </div>
-    </div>
-  
-    <div class="dropdown">
-      <div class="dropdown-header">Module 10: Diffusion Models</div>
-      <div class="dropdown-content">
-        <ul>
-          <li><b>Autoencoders</b></li>
-          <li><b>Variational Autoencoders (VAEs)</b></li>
-          <li><b>UNets</b></li>
-          <li><b>Diffusion Transformers</b></li>
-          <li><b>Diffusion Process via Markov Chains</b></li>
-          <li><b>Timestep Schedulers (cosine, linear, beta, etc.)</b></li>
-          <li><b>Classifier-Free Guidance</b></li>
-          <li><b>Vision Language Models</b></li>
-          <li><b>Cross attention based guidance</b></li>
-        </ul>
-      </div>
+  <div class="dropdown">
+    <div class="dropdown-header">Module 2: Neural Language Modeling</div>
+    <div class="dropdown-content">
+      <ul>
+        <li><b>Neural Networks (NN)</b></li>
+        <li><b>Convolutional Neural Networks (CNN)</b></li>
+        <li><b>Recurrent Neural Networks (RNN)</b></li>
+        <li><b>Long Short-Term Memory Networks (LSTM)</b></li>
+        <li><b>Sequence-to-Sequence Models</b></li>
+        <li><b>Backpropagation</b></li>
+      </ul>
     </div>
   </div>
-  <!-- Announcements -->
-  <div class="sechighlight">
-    <div class="container sec" id="coursework" style="margin-top:-20px">
-      <br>
-      <h2>Announcements 📢</h2>
-      <div style="font-weight: bold; border: 1px solid black; padding: 10px; min-height: 100px; background: rgb(230, 233, 255);">
-        The first lecture will be uploaded to the YouTube shortly.
-      </div>
+
+  <div class="dropdown">
+    <div class="dropdown-header">Module 3: Training Neural Network Models</div>
+    <div class="dropdown-content">
+      <ul>
+        <li><b>Attention Mechanisms</b></li>
+        <li><b>Optimizers</b></li>
+        <li><b>Residual Connections</b></li>
+        <li><b>Batch Normalization / Layer Normalization</b></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <div class="dropdown-header">Module 4: Transformers</div>
+    <div class="dropdown-content">
+      <ul>
+        <li><b>Introduction to Transformers</b></li>
+        <li><b>"Attention is All You Need" Paper</b></li>
+        <li><b>Tokenizers (from scratch and using HuggingFace libraries)</b></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <div class="dropdown-header">Module 5: LLM Training</div>
+    <div class="dropdown-content">
+      <ul>
+        <li><b>Pre Training</b>
+          <ul>
+            <li><b>Data Preparation</b></li>
+            <li><b>Scaling Laws</b></li>
+          </ul>
+        </li>
+        <li><b>Fine-tuning (TULU)</b></li>
+        <li><b>In-Context Learning</b></li>
+        <li><b>Preference Optimization</b>
+          <ul>
+            <li><b>RLHF (Reinforcement Learning from Human Feedback)</b></li>
+            <li><b>DPO (Direct Preference Optimization)</b></li>
+            <li><b>PPO (Proximal Policy Optimization)</b></li>
+            <li><b>GRPO (Group Relative Policy Optimization)</b></li>
+          </ul>
+        </li>
+        <li><b>Distributed Training</b>
+          <ul>
+            <li><b>Fully Sharded Data Parallel</b></li>
+            <li><b>DeepSpeed</b></li>
+            <li><b>Accelerate</b></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <div class="dropdown-header">Module 6: LLM Optimization</div>
+    <div class="dropdown-content">
+      <ul>
+        <li><b>Inference Optimization</b>
+          <ul>
+            <li><b>Batching</b></li>
+            <li><b>Quantization</b>
+              <ul>
+                <li><b>FP32, FP16, int8, NF4</b></li>
+                <li><b>GGUF</b></li>
+                <li><b>llama.cpp</b></li>
+              </ul>
+            </li>
+            <li><b>KV Caching</b></li>
+            <li><b>torch.compile()</b></li>
+            <li><b>FlashAttention</b></li>
+          </ul>
+        </li>
+        <li><b>Attention Optimization (L Serve, Top-k, Top-Theta)</b></li>
+        <li><b>Parameter-Efficient Fine-Tuning (LoRA, QLoRA, etc.)</b></li>
+        <li><b>Distillation</b></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <div class="dropdown-header">Module 7: Reasoning with LLMs</div>
+    <div class="dropdown-content">
+      <ul>
+        <li><b>Search Techniques</b></li>
+        <li><b>Test-Time Scaling</b></li>
+        <li><b>Reinforcement Learning (RL) Overview</b></li>
+        <li><b>Chain-of-Thought (CoT) Reasoning</b></li>
+        <li><b>Related Research Papers</b></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <div class="dropdown-header">Module 8: Advanced LLM Architectures</div>
+    <div class="dropdown-content">
+      <ul>
+        <li><b>Multimodal LLMs</b></li>
+        <li><b>Mixture of Experts (MoE)</b></li>
+        <li><b>Mamba</b></li>
+        <li><b>Diffusion LLMs</b></li>
+        <li><b>Large Concept Models (LCM)</b></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <div class="dropdown-header">Module 9: Retrieval-Augmented Generation (RAG)</div>
+    <div class="dropdown-content">
+      <ul>
+        <li><b>Indexing</b></li>
+        <li><b>Retrieval</b></li>
+        <li><b>Generation</b></li>
+        <li><b>Query Translation</b>
+          <ul>
+            <li><b>Multi Query</b></li>
+            <li><b>RAG Fusion</b></li>
+            <li><b>Decomposition</b></li>
+            <li><b>HyDE</b></li>
+          </ul>
+        </li>
+        <li><b>Routing</b></li>
+        <li><b>Query Construction</b></li>
+        <li><b>Indexing</b></li>
+        <li><b>Building a RAG application</b></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <div class="dropdown-header">Module 10: Diffusion Models</div>
+    <div class="dropdown-content">
+      <ul>
+        <li><b>Autoencoders</b></li>
+        <li><b>Variational Autoencoders (VAEs)</b></li>
+        <li><b>UNets</b></li>
+        <li><b>Diffusion Transformers</b></li>
+        <li><b>Diffusion Process via Markov Chains</b></li>
+        <li><b>Timestep Schedulers (cosine, linear, beta, etc.)</b></li>
+        <li><b>Classifier-Free Guidance</b></li>
+        <li><b>Vision Language Models</b></li>
+        <li><b>Cross attention based guidance</b></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- Announcements -->
+<div class="sechighlight">
+  <div class="container sec" id="coursework" style="margin-top:-20px">
+    <br>
+    <h2>Announcements 📢</h2>
+    <div
+      style="font-weight: bold; border: 1px solid black; padding: 10px; min-height: 100px; background: rgb(230, 233, 255);">
+      The second lecture is out! Slides for the second class will be made available soon.
+    </div>
   </div>
 
   <!-- Schedule -->
@@ -447,23 +453,34 @@
           <td> 1 </td>
           <td> 19th March 2025 </td>
           <td> Introduction to Language Models: Scope and Overview </td>
-          <td><a href="../resources/ppt/Introduction to Language Models - Scope and Overview.pdf">Introduction to Language Models - Scope and Overview.pdf</a></td>
+          <td><a href="../resources/ppt/Introduction to Language Models - Scope and Overview.pdf">Introduction to
+              Language Models - Scope and Overview.pdf</a></td>
           <td>
             <a href="https://colab.research.google.com/drive/1R_XqOObxUij8yma2dIxlsFO8eWI0E7Mc">Assignment 1</a>
           </td>
-          <td><a href="https://www.youtube.com/watch?v=Mi4HB8Fkzsw">LLM | Introduction to Language Models: Scope and Overview | Lecture 01</a></td>
+          <td><a href="https://www.youtube.com/watch?v=Mi4HB8Fkzsw">LLM | Introduction to Language Models: Scope and
+              Overview | Lecture 01</a></td>
         </tr>
         <tr>
           <td> 2 </td>
           <td> 23th March 2025 </td>
-          <td> Introduction to LLMs - Part 2 </td>
+          <td> Introduction Neural Networks - Part 1 </td>
           <!-- <td> <a href="https://github.com/stanford-cs336/spring2025-lectures/blob/main/lecture_01.py">lecture_01.py</a> </td> -->
-          <td></td>
+          <td>
+            <b>
+              <font color="red">TBD</font>
+            </b>
+          </td>
           <td>
             <!-- Assignment 1 <b><font color="green">out</font></b> -->
-            <b><font color="red">TBD</font></b>
+            <b>
+              <font color="red">TBD</font>
+            </b>
           </td>
-          <td></td>
+          <td>
+            <a href="https://www.youtube.com/watch?v=rvg9fp2cduM">LLM | Introduction to Neural Networks: Part 1 |
+              Lecture 02</a>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -472,17 +489,17 @@
   <!-- jQuery and Bootstrap -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  
+
   <!-- Add whitespace to ensure schedule is visible when banner is active -->
   <div style="height: 200px;"></div>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const dropdowns = document.querySelectorAll(".dropdown");
-  
+
       dropdowns.forEach(dropdown => {
         const header = dropdown.querySelector(".dropdown-header");
         const content = dropdown.querySelector(".dropdown-content");
-  
+
         header.addEventListener("click", () => {
           // Toggle the 'open' class
           const isOpen = dropdown.classList.contains("open");
@@ -491,7 +508,7 @@
               d.classList.remove("open");
             }
           });
-  
+
           if (!isOpen) {
             dropdown.classList.add("open");
           } else {
@@ -502,4 +519,5 @@
     });
   </script>
   </body>
+
 </html>
